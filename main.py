@@ -9,11 +9,17 @@ mcp = FastMCP[Any](
     stateless_http=True # set true for no handshake 
 )
 
-@mcp.tool()
+@mcp.tool(
+        name="Greetings",
+        description="A simple tool to greet people"
+)
 def hello(name: str) -> str:
     return f"hello, {name}!"
 
-@mcp.tool()
+@mcp.tool(
+        name="Get Weather",
+        description="A simple tool to get weather information for a city"
+)
 def get_weather(city: str) -> str:
     return f"The weather in {city} is Sunny"
 
