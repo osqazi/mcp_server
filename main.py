@@ -10,14 +10,14 @@ mcp = FastMCP[Any](
  )
 
 @mcp.tool(
-        name="Greetings",
+        name="greetings",
         description="A simple tool to greet people"
 )
 def hello(name: str) -> str:
     return f"hello, {name}!"
 
 @mcp.tool(
-        name="Get Weather",
+        name="get_Weather",
         description="A simple tool to get weather information for a city"
 )
 def get_weather(city: str) -> str:
