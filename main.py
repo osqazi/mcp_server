@@ -2,6 +2,8 @@
 
 from typing import Any
 from mcp.server.fastmcp import FastMCP
+from starlette.middleware.trustedhost import TrustedHostMiddleware
+
 
 
 mcp = FastMCP[Any](
@@ -26,6 +28,12 @@ def get_weather(city: str) -> str:
 
 
 mcp_app = mcp.streamable_http_app()
+
+# IMPORTANT: allow HF host
+mcp_app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=["*"]
+)
 
 
 # how to run mcp server : uv run uvicorrn main:mcp_app --reload
