@@ -20,7 +20,7 @@ COPY main.py ./
 EXPOSE 7860
 
 # disable MCP host header validation
-ENV MCP_ALLOW_ANY_HOST=true
+ENV MCP_ALLOWED_HOSTS=osqazi-first-mcpserver.hf.space,localhost,127.0.0.1
 
 
 # Define the command to run the application
