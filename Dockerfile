@@ -19,5 +19,9 @@ COPY main.py ./
 # Expose the port the app runs on
 EXPOSE 7860
 
+# disable MCP host header validation
+ENV MCP_ALLOW_ANY_HOST=true
+
+
 # Define the command to run the application
 CMD ["uv", "run", "uvicorn", "main:mcp_app", "--host", "0.0.0.0", "--port", "7860", "--proxy-headers"]

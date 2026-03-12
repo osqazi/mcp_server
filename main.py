@@ -6,9 +6,8 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP[Any](
     name="hello-server",
-    stateless_http=True # set true for no handshake,
-    allow_origins=["*"]
-)
+    stateless_http=True, # set true for no handshake
+ )
 
 @mcp.tool(
         name="Greetings",
